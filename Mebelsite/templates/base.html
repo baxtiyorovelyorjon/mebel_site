@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Академия Monday - курсы по программированию и дизайну</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="{% static '/css/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+<section id="main" class="hero is-primary is-bold is-fullheight">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                    {% for rs in logo %}
+                    <div class="navbar-brand">
+                        <a href="#" class="navbar-item">
+                            <img src="{{ rs.image1.url }}" alt="Logo">
+                        </a>
+                        <span class="navbar-burger burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    </div>
+                {% endfor %}
+
+
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{% url 'mebel' %}" class="navbar-item">Asosiy</a>
+                        <a href="#courses" class="navbar-item">Mebellar</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                {% for rs in logo %}
+                <div class="column">
+                    <img src="{{ rs.main_img.url }}" width="100%" alt="">
+                </div>
+                {% endfor %}
+                <div class="column is-5-desktop is-offset-1-desktop">
+                    <h1 class="title is-1">
+                        Furniture Brands - bu sizning tanlovingiz
+                    </h1>
+
+                    <h2 class="subtitle">
+                        Furniture Brands - O'zbekistondagi eng sifatli va hamyonbop mahsulot
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% block content %}
+{% endblock %}
+<footer class="section">
+    <div class="content has-text-centered">
+        <p>
+            <strong><a href="/" class="has-text-dark">Furniture brand</a></strong>
+            Подразделение
+            <a href="https://t.me/mebelnazakaztoshkentbuylab">OOO "Mebel labs"</a>.<br>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
